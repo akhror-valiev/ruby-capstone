@@ -1,4 +1,5 @@
 require '../item'
+
 class MusicAlbum < Item
   attr_reader :on_spotify, :id
 
@@ -8,4 +9,8 @@ class MusicAlbum < Item
   end
 
   private
+
+  def can_be_archived?
+    @on_spotify && super
+  end
 end
