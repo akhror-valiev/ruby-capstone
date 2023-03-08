@@ -7,4 +7,10 @@ class Book < Item
         @publisher = publisher
         @cover_state = cover_state
     end
+
+    def can_be_archived(self):
+        if self.cover_state == "bad":
+            return True
+        return super().can_be_archived()
+    end
 end
