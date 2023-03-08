@@ -8,8 +8,4 @@ class MusicAlbum < Item
   end
 
   private
-
-  def can_be_archived?
-    @on_spotify && super
-  end
 end
