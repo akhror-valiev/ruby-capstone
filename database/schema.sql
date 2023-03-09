@@ -32,3 +32,10 @@ CREATE TABLE music_album(
   author VARCHAR(20),
   PRIMARY KEY(id)
 );
+
+CREATE TABLE genre(
+  id INT GENERATED ALWAYS AS IDENTITY,
+  name VARCHAR(20),
+  items ARRAY,
+  PRIMARY KEY(id)
+);
