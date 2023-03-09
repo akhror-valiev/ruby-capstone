@@ -17,4 +17,8 @@ class App
     file_path = "./#{directory}/#{filename}"
     File.exist?(file_path) && JSON.parse(File.read(file_path))
   end
+
+  def store_data
+    File.write('./storage/genres.json', JSON.pretty_generate(@genres))
+  end
 end
