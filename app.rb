@@ -21,4 +21,18 @@ class App
   def store_data
     File.write('./storage/genres.json', JSON.pretty_generate(@genres))
   end
+
+  def list_data(option)
+    case option
+    when '1'
+      @books.list
+    when '2'
+      @games.list
+    when '3'
+      @books.label_list
+    when '4'
+      @games.authors_list
+    end
+  end
+
 end
