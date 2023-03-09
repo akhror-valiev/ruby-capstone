@@ -13,4 +13,14 @@ class Lable
         @items << item unless @items.include?(item)
         item.label(self)
     end
+
+    
+  def to_json(*_args)
+    {
+      'id' => @id,
+      'title' => @title,
+      'color' => @color,
+      'class' => self.class.name
+    }
+  end
 end
