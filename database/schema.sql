@@ -14,3 +14,10 @@ CREATE TABLE book(
   publisher VARCHAR(100),
   cover_state VARCHAR(100)
 );
+
+CREATE TABLE label(
+  id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  title VARCHAR(100),
+  color VARCHAR(100),
+  items ARRAY
+);
