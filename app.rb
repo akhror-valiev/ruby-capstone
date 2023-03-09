@@ -35,4 +35,24 @@ class App
     end
   end
 
+  def add_data(option)
+    case option
+    when '9'
+      @books.create
+    when '10'
+      album_data = @client.album_info
+      music_album = MusicAlbum.new(album_data['publish_date'], album_data['on_spotify'])
+      @music_albums << music_album.to_hash
+
+      album_data['genre_name'].nil? && return
+
+      genre = Genre.new(album_data['genre_name'])
+      genre.add_item(music_album)
+      @genres << genre.to_hash
+    when '12'
+      @games.create
+    end
+    puts 'successfully added'
+  end
+
 end
