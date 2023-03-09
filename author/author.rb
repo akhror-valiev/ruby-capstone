@@ -1,7 +1,8 @@
-class Author
-  attr_accessor :first_name, :last_name
-  attr_reader :items, :id
+require 'json'
+require_relative '../item'
 
+class Author
+  attr_accessor :id, :first_name, :last_name, :items
 
   def initialize(first_name, last_name)
     @id = Random.rand(1..1000)
@@ -11,7 +12,7 @@ class Author
   end
 
   def add_item(item)
-    @items << item unless @items.include?(item)
-    item.author(self)
+    @items << item
+    item.author = self
   end
 end
