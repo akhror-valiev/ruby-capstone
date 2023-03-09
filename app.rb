@@ -22,15 +22,20 @@ class App
     File.write('./storage/genres.json', JSON.pretty_generate(@genres))
   end
 
+ 
   def list_data(option)
     case option
     when '1'
       @books.list
     when '2'
-      @games.list
-    when '3'
-      @books.label_list
+      @client.print_data(@music_albums)
     when '4'
+      @games.list
+    when '5'
+      @client.print_data(@genres)
+    when '6'
+      @books.label_list
+    when '7'
       @games.authors_list
     end
   end
