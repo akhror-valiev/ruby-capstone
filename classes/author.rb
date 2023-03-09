@@ -15,4 +15,13 @@ class Author
         item.author(self)
     end
 
+    def to_json(*_args)
+        {
+          'id' => @id,
+          'first_name' => @first_name,
+          'last_name' => @last_name,
+          'class' => self.class.name
+        }
+      end
+
 end
