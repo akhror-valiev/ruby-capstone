@@ -46,3 +46,12 @@ CREATE TABLE author(
   last_name VARCHAR(100),
   items ARRAY
 );
+
+
+CREATE TABLE game(
+  id INT GENERATED ALWAYS AS IDENTITY PRIMARY,
+  item_id INT REFERENCES item(id),
+  multiplier BOOLEAN,
+  last_played_at DATE,
+  publish_date DATE
+);
