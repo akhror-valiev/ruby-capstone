@@ -2,7 +2,6 @@ class Author
   attr_accessor :first_name, :last_name
   attr_reader :items, :id
 
-
   def initialize(first_name, last_name)
     @id = Random.rand(1..1000)
     @first_name = first_name
@@ -23,5 +22,10 @@ class Author
           'class' => self.class.name
         }
       end
+
+  def add_item(item)
+    @items << item unless @items.include?(item)
+    item.author(self)
+  end
 
 end

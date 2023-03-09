@@ -17,6 +17,8 @@ class Game < Item
       'class' => self.class.name
     }
   end
+=======
+
 
   private
 
