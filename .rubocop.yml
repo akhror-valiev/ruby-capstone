@@ -33,6 +33,8 @@ Style/DefWithParentheses:
   Enabled: false
 Style/RedundantStringEscape:
   Enabled: false
+Style/FileEmpty:
+  Enabled: false
 Style/FrozenStringLiteralComment:
   EnforcedStyle: never
 
