@@ -6,3 +6,11 @@ CREATE TABLE item(
   publish_date DATE,
   archived BOOLEAN NOT NULL DEFAULT FALSE
 );
+
+CREATE TABLE book(
+  id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  items_id INT REFERENCES item(id),
+  publish_date DATE,
+  publisher VARCHAR(100),
+  cover_state VARCHAR(100)
+);
