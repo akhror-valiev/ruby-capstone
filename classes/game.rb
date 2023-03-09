@@ -18,7 +18,6 @@ class Game < Item
     }
   end
 
-  
   private
 
   def can_be_archived?
