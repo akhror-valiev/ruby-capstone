@@ -1,11 +1,3 @@
-CREATE TABLE item(
-  id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-  genre_id INT REFERENCES genre(id) ON DELETE CASCADE,
-  author_id INT REFERENCES author(id) ON DELETE CASCADE,
-  label_id INT REFERENCES label(id) ON DELETE CASCADE,
-  publish_date DATE,
-  archived BOOLEAN NOT NULL DEFAULT FALSE
-);
 
 CREATE TABLE book(
   id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -20,17 +12,6 @@ CREATE TABLE label(
   title VARCHAR(100),
   color VARCHAR(100),
   items ARRAY
-);
-
-CREATE TABLE music_album(
-  id INT GENERATED ALWAYS AS IDENTITY,
-  on_spotify BOOLEAN,
-  publish_date VARCHAR(12),
-  genre VARCHAR(20),
-  label VARCHAR(20),
-  source VARCHAR(20),
-  author VARCHAR(20),
-  PRIMARY KEY(id)
 );
 
 CREATE TABLE genre(
