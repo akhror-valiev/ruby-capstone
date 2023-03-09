@@ -55,4 +55,14 @@ class App
     puts 'successfully added'
   end
 
+  def run
+    loop do
+      @client = Client.new
+      option = client.option
+      break if option == '13'
+
+      list_data(option) if option.to_i <= 8
+      add_data(option) if option.to_i > 8
+    end
+  end
 end
