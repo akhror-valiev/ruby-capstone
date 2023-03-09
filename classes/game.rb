@@ -9,6 +9,16 @@ class Game < Item
     @last_played_at = last_played_at
   end
 
+  def to_json(*_args)
+    {
+      'multiplayer' => @multiplayer,
+      'last_played_at' => @last_played_at,
+      'publish_date' => @publish_date,
+      'class' => self.class.name
+    }
+  end
+=======
+
 
   private
 
