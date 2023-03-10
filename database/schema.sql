@@ -1,38 +1,55 @@
+CREATE DATABASE my_catalog;
 
-CREATE TABLE book(
-  id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-  items_id INT REFERENCES item(id),
-  publish_date DATE,
-  publisher VARCHAR(100),
-  cover_state VARCHAR(100)
+CREATE TABLE author(
+  ID SERIAL PRIMARY KEY,
+  first_name VARCHAR(30),
+  last_name VARCHAR(30)
 );
-
+  
 CREATE TABLE label(
-  id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-  title VARCHAR(100),
-  color VARCHAR(100),
-  items ARRAY
+  ID SERIAL PRIMARY KEY,
+  name VARCHAR(30)
 );
 
 CREATE TABLE genre(
-  id INT GENERATED ALWAYS AS IDENTITY,
-  name VARCHAR(20),
-  items ARRAY,
-  PRIMARY KEY(id)
+  ID SERIAL PRIMARY KEY,
+  name VARCHAR(30)
 );
 
-CREATE TABLE author(
-  id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-  first_name VARCHAR(100),
-  last_name VARCHAR(100),
-  items ARRAY
+CREATE TABLE book(
+  ID SERIAL PRIMARY KEY,
+  publish_date DATE NOT NULL,
+  archived BOOLEAN NOT NULL,
+  publisher VARCHAR(30) NOT NULL,
+  cover_state VARCHAR(10) NOT NULL,
+  label_ID INT,
+  author_ID INT,
+  genre_ID INT,
+  FOREIGN KEY (label_ID) REFERENCES label(ID),
+  FOREIGN KEY (author_ID) REFERENCES author(ID),
+  FOREIGN KEY(genre_ID) REFERENCES genre(ID)
 );
-
 
 CREATE TABLE game(
-  id INT GENERATED ALWAYS AS IDENTITY PRIMARY,
-  item_id INT REFERENCES item(id),
-  multiplier BOOLEAN,
-  last_played_at DATE,
-  publish_date DATE
+  ID SERIAL PRIMARY KEY,
+  multiplayer VARCHAR(30) NOT NULL,
+  last_played_at DATE NOT NULL,
+  publish_date DATE NOT NULL,
+  archived BOOLEAN NOT NULL,
+  label_ID INT,
+  author_ID INT,
+  genre_ID INT,
+  FOREIGN KEY (label_ID) REFERENCES label(ID),
+  FOREIGN KEY (author_ID) REFERENCES author(ID),
+  FOREIGN KEY(genre_ID) REFERENCES genre(ID)
+);
+
+CREATE TABLE music_album(
+  ID SERIAL PRIMARY KEY,
+  publish_date DATE NOT NULL,
+  on_spotify BOOLEAN NOT NULL,
+  archived BOOLEAN NOT NULL,
+  label_ID INT REFERENCES label(ID),
+  author_ID INT REFERENCES author(ID),
+  genre_ID INT REFERENCES genre(ID)
 );
