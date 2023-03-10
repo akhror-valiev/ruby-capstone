@@ -10,18 +10,17 @@ AllCops:
 Layout/LineLength:
   Max: 120
 Metrics/MethodLength:
-  Max: 50
+  Max: 30
 Metrics/AbcSize:
   Max: 50
 Metrics/ClassLength:
   Max: 150
 Metrics/BlockLength:
-  IgnoredMethods: ['describe']
+  IgnoredMethods: ["describe"]
   Max: 30
 
-  AllowedMethods: ["describe"]
-  Max: 50
-
+Metrics/CyclomaticComplexity:
+  Enabled: false
 Style/Documentation:
   Enabled: false
 Style/ClassAndModuleChildren:
@@ -31,6 +30,10 @@ Style/EachForSimpleLoop:
 Style/AndOr:
   Enabled: false
 Style/DefWithParentheses:
+  Enabled: false
+Style/RedundantStringEscape:
+  Enabled: false
+Style/FileEmpty:
   Enabled: false
 Style/FrozenStringLiteralComment:
   EnforcedStyle: never
