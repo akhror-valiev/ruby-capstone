@@ -1,8 +1,8 @@
 require_relative 'main'
 
-def app
+def starter
   main = Main.new
   main.start
 end
 
-app
+starter
