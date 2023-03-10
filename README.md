@@ -32,8 +32,8 @@
 
 ### Key Features <a name="key-features" />
 
-**Create classes and methods in Ruby.**
-
+- **Create classes and methods in Ruby.**
+- **Write I/O in Ruby**
 - **Write Rspec unit tests with mocks.**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -66,6 +66,8 @@ Install this project with:
 
 ```
 Run this command on your terminal to install all the dependencies: `bundle install`.
+
+Run this command on your terminal to test: `rspec`.
 
 ```
 
