@@ -67,11 +67,15 @@ Install this project with:
 ```
 Run this command on your terminal to install all the dependencies: `bundle install`.
 
+
+
+```
+### Test
+
+```
 Run this command on your terminal to test: `rspec`.
 
 ```
-
----
 
 ## 👥 Authors <a name="authors" />
 
